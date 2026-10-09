@@ -1340,3 +1340,601 @@ button:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+.page-standalone {
+  background:
+    radial-gradient(circle at top right, rgb(243 200 120 / 28%), transparent 33%),
+    linear-gradient(180deg, #fff9f0 0%, #fff8ec 100%);
+}
+
+.page-standalone main {
+  padding-bottom: clamp(72px, 8vw, 120px);
+}
+
+.page-hero {
+  padding: clamp(44px, 6vw, 84px) 0 24px;
+}
+
+.page-hero__inner,
+.page-shell-compact {
+  width: min(var(--page-width), calc(100% - 96px));
+  margin-inline: auto;
+}
+
+.page-hero__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border: 1px solid rgb(108 61 22 / 18%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 72%);
+  color: #8a4d17;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.page-hero__chip::before {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange);
+  content: "";
+}
+
+.page-hero h1 {
+  max-width: 720px;
+  margin: 18px 0 12px;
+  font-size: clamp(42px, 5vw, 74px);
+  letter-spacing: -1.9px;
+  line-height: 0.98;
+}
+
+.page-hero h1 span {
+  color: var(--orange);
+}
+
+.page-hero p {
+  max-width: 660px;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.5;
+}
+
+.page-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.page-hero__meta span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid rgb(83 48 25 / 10%);
+  border-radius: 999px;
+  background: #fffdf8;
+  color: #5a4034;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.page-section {
+  padding-top: clamp(36px, 5vw, 66px);
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: stretch;
+  gap: clamp(22px, 3vw, 38px);
+}
+
+.page-panel {
+  overflow: hidden;
+  border: 1px solid rgb(83 48 25 / 10%);
+  border-radius: 24px;
+  background: #fffdf8;
+  box-shadow: 0 18px 42px rgb(73 48 24 / 8%);
+}
+
+.page-panel__body {
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.page-kicker {
+  color: #b6662f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.page-panel h2,
+.page-panel h3 {
+  margin: 12px 0 0;
+  letter-spacing: -0.9px;
+  line-height: 1.1;
+}
+
+.page-panel h2 {
+  font-size: clamp(32px, 4vw, 52px);
+}
+
+.page-panel p {
+  margin: 14px 0 0;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.page-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.page-stat {
+  padding: 18px 14px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fff5e0 0%, #fffaf3 100%);
+  border: 1px solid rgb(83 48 25 / 8%);
+}
+
+.page-stat strong {
+  display: block;
+  color: var(--ink);
+  font-size: clamp(22px, 2vw, 30px);
+  letter-spacing: -1px;
+}
+
+.page-stat span {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.page-checks {
+  display: grid;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.page-checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  list-style: none;
+  color: #49372f;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-checks li::before {
+  display: inline-grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: #e8f2d9;
+  color: #58763e;
+  content: "✓";
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.games-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 28px);
+  margin-top: 28px;
+}
+
+.games-page__card {
+  overflow: hidden;
+  border: 1px solid rgb(83 48 25 / 10%);
+  border-radius: 24px;
+  background: #fffdf8;
+  box-shadow: 0 18px 40px rgb(73 48 24 / 10%);
+}
+
+.games-page__card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+}
+
+.games-page__content {
+  padding: 22px 20px 18px;
+}
+
+.games-page__content .page-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.games-page__content h3 {
+  margin: 0;
+  font-size: clamp(22px, 2.4vw, 30px);
+}
+
+.games-page__content p {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.games-page__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgb(83 48 25 / 8%);
+}
+
+.games-page__footer span {
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.games-page__footer a {
+  font-weight: 700;
+  color: #8d4a12;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  padding: 18px 18px 18px 0;
+  border-bottom: 1px solid rgb(83 48 25 / 8%);
+}
+
+.timeline__year {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  min-height: 42px;
+  border-radius: 999px;
+  background: #ffe8af;
+  color: #7b4318;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.timeline__item h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.timeline__item p {
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.careers-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.career-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 250px;
+  padding: 22px 20px;
+  border: 1px solid rgb(83 48 25 / 10%);
+  border-radius: 24px;
+  background: #fffdf8;
+  box-shadow: 0 16px 38px rgb(73 48 24 / 8%);
+}
+
+.career-card__tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #fff0cc;
+  color: #7b4318;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+.career-card h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.career-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.career-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #49372f;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(24px, 3vw, 42px);
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+.contact-card {
+  display: grid;
+  gap: 18px;
+  padding: clamp(22px, 3vw, 30px);
+}
+
+.contact-card--feature {
+  display: flex;
+  flex-direction: column;
+  min-height: 620px;
+  padding: clamp(28px, 3vw, 38px) clamp(26px, 2.5vw, 34px) clamp(18px, 2vw, 22px);
+  border: 0;
+  border-radius: 34px;
+  background: #2b1b12;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.contact-card__eyebrow {
+  margin-top: 10px;
+  color: #f29d45;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.contact-card__feature-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  margin-top: 8px;
+  flex: 1;
+}
+
+.contact-card__title {
+  margin: 0;
+  max-width: 330px;
+  color: #fffaf4;
+  font-size: clamp(52px, 5vw, 110px);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.76;
+  text-align: left;
+  text-transform: lowercase;
+}
+
+.contact-card__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 0 auto;
+  padding-top: 8px;
+}
+
+.contact-card__socials a {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #fffaf4;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-card__socials a:hover,
+.contact-card__socials a:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.contact-card__socials svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-card__socials .social-links__dot,
+.contact-card__socials .social-links__play {
+  fill: currentColor;
+  stroke: none;
+}
+
+.contact-card__mail {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: min(100%, 490px);
+  margin-top: auto;
+  padding: 12px 16px 12px 12px;
+  border-radius: 18px;
+  background: #f5f0e6;
+  color: #2d1b13;
+  box-shadow: 0 10px 0 rgba(255, 255, 255, 0.06);
+}
+
+.contact-card__mail-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 12px;
+  background: #f5c868;
+  color: #2b1b12;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.contact-card__mail-value {
+  overflow-wrap: anywhere;
+  font-size: clamp(15px, 1.45vw, 18px);
+  font-weight: 600;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid rgb(83 48 25 / 10%);
+  border-radius: 18px;
+  background: #fffdf8;
+}
+
+.contact-row__icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  background: #ffe8af;
+  color: #7b4318;
+  font-size: 18px;
+}
+
+.contact-row strong,
+.contact-row a {
+  display: block;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid rgba(83, 48, 25, 0.12);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.contact-form .page-kicker {
+  color: #d98535;
+  font-size: 12px;
+}
+
+.contact-form h2 {
+  margin: 0;
+  font-size: clamp(50px, 4.1vw, 86px);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.contact-form form {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 10px;
+  color: #4d3a32;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin: 0;
+  padding: 13px 14px;
+  border: 1px solid rgba(83, 48, 25, 0.13);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+  font: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.contact-form textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+.contact-form button {
+  justify-self: start;
+  min-width: 180px;
+  margin-top: 8px;
+  border: 0;
+  box-shadow: 0 5px 0 #d88f0b;
+}
+
+@media (max-width: 980px) {
+  .games-page__grid,
+  .careers-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero__inner,
+  .page-shell-compact {
+    width: min(var(--page-width), calc(100% - 40px));
+  }
+
+  .games-page__grid,
+  .careers-list,
+  .page-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline__item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .timeline__year {
+    width: fit-content;
+    padding-inline: 14px;
+  }
+}
