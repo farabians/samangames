@@ -117,27 +117,27 @@
                 </div>
               </div>
 
-              <a class="contact-card__mail" href="mailto:samangamesoffical@gmail.com">
+              <a class="contact-card__mail" href="mailto:samangamesofficial@gmail.com">
                 <span class="contact-card__mail-icon" aria-hidden="true">✉</span>
-                <span class="contact-card__mail-value">samangamesoffical@gmail.com</span>
+                <span class="contact-card__mail-value">samangamesofficial@gmail.com</span>
               </a>
             </div>
 
             <div class="page-panel contact-form">
               <span class="page-kicker">Send a message</span>
               <h2>Quick hello.</h2>
-              <form action="mailto:samangamesoffical@gmail.com" method="post" enctype="text/plain">
+              <form class="contact-form__form">
                 <label>
                   Name
-                  <input type="text" name="name" placeholder="Your name" />
+                  <input type="text" name="name" placeholder="Your name" required />
                 </label>
                 <label>
                   Email
-                  <input type="email" name="email" placeholder="Your email" />
+                  <input type="email" name="email" placeholder="Your email" required />
                 </label>
                 <label>
                   Message
-                  <textarea name="message" placeholder="Tell us about your idea"></textarea>
+                  <textarea name="message" placeholder="Tell us about your idea" required></textarea>
                 </label>
                 <button class="button button--primary" type="submit">Send message</button>
               </form>
@@ -175,7 +175,7 @@
               </svg>
             </a>
           </div>
-          <a class="contact-card__arrow" href="mailto:samangamesoffical@gmail.com" aria-label="Email Saman Games">→</a>
+          <a class="contact-card__arrow" href="mailto:samangamesofficial@gmail.com" aria-label="Email Saman Games">→</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -215,6 +215,20 @@
 
       document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') closeMenu();
+      });
+
+      const contactForm = document.querySelector('.contact-form__form');
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const name = formData.get('name').trim();
+        const email = formData.get('email').trim();
+        const message = formData.get('message').trim();
+        const subject = `Saman Games contact: ${name}`;
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+        window.location.href = `mailto:samangamesofficial@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
     </script>
   </body>
