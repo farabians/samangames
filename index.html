@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="src/S-logo.png" />
+    <link rel="icon" type="image/png" href="assets/images/brand/s-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -16,15 +16,25 @@
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <script>
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-motion');
+        // If the animation script never loads, show everything instead of leaving it hidden.
+        setTimeout(() => {
+          if (!window.samanMotion) document.documentElement.classList.remove('js-motion');
+        }, 2500);
+      }
+    </script>
   </head>
   <body>
     <main>
       <section class="hero" id="home" aria-labelledby="hero-title">
         <header class="site-header">
           <a class="brand" href="#home" aria-label="Saman Games home">
-            <img src="src/samangames_logo.png" alt="Saman Games" />
+            <img src="assets/images/brand/samangames-logo.png" alt="Saman Games" />
           </a>
 
           <button
@@ -107,23 +117,23 @@
 
       <section class="games-section" id="games" aria-labelledby="games-title">
         <div class="games-section__inner page-shell">
-          <div class="games-intro">
-            <span class="eyebrow">Our Games</span>
-            <h2 id="games-title">Play. Explore.<br /><span>Enjoy!</span></h2>
-            <p>
+          <div class="games-intro" data-reveal-stagger="90">
+            <span class="eyebrow" data-reveal>Our Games</span>
+            <h2 id="games-title" data-reveal>Play. Explore.<br /><span>Enjoy!</span></h2>
+            <p data-reveal>
               Two colorful worlds, fun puzzles and exciting adventures for
               everyone.
             </p>
-            <a class="button button--outline" href="#contact">
+            <a class="button button--outline" href="#contact" data-reveal>
               View All Games <span aria-hidden="true">→</span>
             </a>
           </div>
 
-          <div class="game-grid">
-            <article class="game-card">
+          <div class="game-grid" data-reveal-stagger="140">
+            <article class="game-card" data-reveal="pop">
               <img
                 class="game-card__image"
-                src="src/melon-merger.png"
+                src="assets/images/games/melon-merger.png"
                 alt="Colorful fruit characters in Melon Merger"
                 loading="lazy"
               />
@@ -135,10 +145,10 @@
                 </a>
               </div>
             </article>
-            <article class="game-card game-card--adventure">
+            <article class="game-card game-card--adventure" data-reveal="pop">
               <img
                 class="game-card__image"
-                src="src/bubbledrop.png"
+                src="assets/images/games/bubble-drop.png"
                 alt="A colorful bubble-popping puzzle game"
                 loading="lazy"
               />
@@ -153,8 +163,8 @@
           </div>
         </div>
 
-        <div class="features page-shell" aria-label="What makes our games special">
-          <article class="feature">
+        <div class="features page-shell" aria-label="What makes our games special" data-reveal-stagger="110">
+          <article class="feature" data-reveal>
             <span class="feature__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                 <path fill="currentColor" d="M8.1 10.2c-2.3 0-3.8 1.7-4.5 4.3l-1.2 4.7c-.6 2.4 2 4 3.9 2.4l3.2-2.7h9l3.2 2.7c1.9 1.6 4.5 0 3.9-2.4l-1.2-4.7c-.7-2.6-2.2-4.3-4.5-4.3H8.1Z"/>
@@ -165,7 +175,7 @@
             </span>
             <span><strong>Fun Gameplay</strong><small>Easy to play,<br />hard to put down.</small></span>
           </article>
-          <article class="feature">
+          <article class="feature" data-reveal>
             <span class="feature__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                 <path fill="currentColor" d="M16 4.5c-6.4 0-11.5 4.7-11.5 10.6 0 5.4 4.4 9.7 9.7 9.7h2.1c1.8 0 2.8-1.9 1.8-3.4-.8-1.2.1-2.8 1.5-2.8h2.2c3.1 0 5.7-2.5 5.7-5.6C27.5 8.3 22.4 4.5 16 4.5Z"/>
@@ -177,7 +187,7 @@
             </span>
             <span><strong>Colorful Worlds</strong><small>Bright and<br />charming designs.</small></span>
           </article>
-          <article class="feature">
+          <article class="feature" data-reveal>
             <span class="feature__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                 <g fill="currentColor">
@@ -191,7 +201,7 @@
             </span>
             <span><strong>For Everyone</strong><small>Games for all ages.</small></span>
           </article>
-          <article class="feature">
+          <article class="feature" data-reveal>
             <span class="feature__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                 <path fill="#211509" d="M16 25.2 6.8 16.5C1.3 11.3 8.7 4.2 14 9l2 1.8L18 9c5.3-4.8 12.7 2.3 7.2 7.5L16 25.2Z"/>
@@ -201,7 +211,7 @@
           </article>
         </div>
 
-        <div class="stats page-shell" aria-label="Saman Games in numbers">
+        <div class="stats page-shell" aria-label="Saman Games in numbers" data-reveal>
           <div class="stat">
             <span class="stat__icon stat__icon--players" aria-hidden="true">
               <svg viewBox="0 0 40 32" xmlns="http://www.w3.org/2000/svg">
@@ -213,7 +223,7 @@
                 </g>
               </svg>
             </span>
-            <span><strong>1M+</strong><small>Happy Players</small></span>
+            <span><strong data-count="1000000" data-suffix="+">1M+</strong><small>Happy Players</small></span>
           </div>
           <div class="stat">
             <span class="stat__icon stat__icon--controller" aria-hidden="true">
@@ -225,7 +235,7 @@
                 <circle cx="25" cy="16.2" r="1.4" fill="#fff0c8"/>
               </svg>
             </span>
-            <span><strong>2</strong><small>Games Released</small></span>
+            <span><strong data-count="2">2</strong><small>Games Released</small></span>
           </div>
           <div class="stat">
             <span class="stat__icon stat__icon--target" aria-hidden="true">
@@ -242,14 +252,14 @@
 
       <section class="about-section" id="about" aria-labelledby="about-title">
         <div class="about-section__inner page-shell">
-          <div class="about-copy">
-            <span class="eyebrow">About Us</span>
-            <h2 id="about-title">An Independent<br />Game Studio</h2>
-            <p>
+          <div class="about-copy" data-reveal-stagger="90">
+            <span class="eyebrow" data-reveal>About Us</span>
+            <h2 id="about-title" data-reveal>An Independent<br />Game Studio</h2>
+            <p data-reveal>
               Saman Games is a passionate and creative team dedicated to making
               playful, high-quality mobile games for players of all ages.
             </p>
-            <a class="button button--outline" href="#contact">
+            <a class="button button--outline" href="#contact" data-reveal>
               Our Story <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -262,10 +272,11 @@
       <div class="contact-section__inner page-shell">
         <img
           class="contact-section__logo"
-          src="src/S-logo.png"
+          src="assets/images/brand/s-logo.png"
           alt="Saman Games"
+          data-reveal="spin"
         />
-        <div class="contact-card">
+        <div class="contact-card" data-reveal>
           <div class="contact-copy">
             <h2 id="contact-title">Let’s Play Together!</h2>
             <p>Follow us for updates, new games and behind the scenes.</p>
@@ -310,36 +321,7 @@
       </div>
     </footer>
 
-    <script>
-      const menuToggle = document.querySelector(".menu-toggle");
-      const siteHeader = document.querySelector(".site-header");
-      const navigationLinks = document.querySelectorAll(
-        ".main-nav a, .header-actions a, .social-links a",
-      );
-
-      const closeMenu = () => {
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation menu");
-        siteHeader.classList.remove("is-menu-open");
-      };
-
-      menuToggle.addEventListener("click", () => {
-        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-        menuToggle.setAttribute("aria-expanded", String(!isExpanded));
-        menuToggle.setAttribute(
-          "aria-label",
-          isExpanded ? "Open navigation menu" : "Close navigation menu",
-        );
-        siteHeader.classList.toggle("is-menu-open", !isExpanded);
-      });
-
-      navigationLinks.forEach((link) => {
-        link.addEventListener("click", closeMenu);
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") closeMenu();
-      });
-    </script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/home-animations.js"></script>
   </body>
 </html>

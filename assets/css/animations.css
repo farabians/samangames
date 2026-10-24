@@ -1,0 +1,448 @@
+/* Home page motion. Every rule is scoped to .js-motion, which is only set
+   when the visitor has not asked for reduced motion. */
+
+:root {
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(-4deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.06) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes spin-in {
+  from {
+    opacity: 0;
+    transform: rotate(-200deg) scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1) translateX(0);
+  }
+  to {
+    transform: scale(1.07) translateX(-1.2%);
+  }
+}
+
+@keyframes bubble-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  12%,
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(calc(-1 * (var(--rise, 720px) + var(--size) * 2)));
+  }
+}
+
+@keyframes bubble-sway {
+  from {
+    translate: calc(-1 * var(--sway)) 0;
+  }
+  to {
+    translate: var(--sway) 0;
+  }
+}
+
+@keyframes bubble-pop {
+  to {
+    opacity: 0;
+    scale: 1.45;
+  }
+}
+
+@keyframes bubble-ring {
+  from {
+    opacity: 0.9;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-130%);
+  }
+  28%,
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes motto-pulse {
+  0%,
+  70%,
+  100% {
+    scale: 1;
+  }
+  35% {
+    scale: 1.6;
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: -12deg;
+  }
+  50% {
+    rotate: 10deg;
+  }
+  75% {
+    rotate: -5deg;
+  }
+}
+
+@keyframes jelly {
+  0%,
+  100% {
+    scale: 1 1;
+  }
+  30% {
+    scale: 1.18 0.86;
+  }
+  50% {
+    scale: 0.9 1.12;
+  }
+  70% {
+    scale: 1.05 0.96;
+  }
+}
+
+@keyframes card-bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -5px;
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  40%,
+  100% {
+    scale: 1;
+  }
+  12%,
+  28% {
+    scale: 1.18;
+  }
+  20% {
+    scale: 1.04;
+  }
+}
+
+@keyframes ping {
+  0% {
+    box-shadow: 0 0 0 0 rgb(255 189 38 / 55%);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 13px rgb(255 189 38 / 0%);
+  }
+}
+
+/* Hero entrance */
+
+.js-motion .site-header {
+  animation: drop-in 700ms var(--ease-out) backwards;
+}
+
+.js-motion .brand:hover img {
+  animation: wiggle 600ms ease;
+}
+
+.js-motion .header-games-link:hover svg {
+  animation: wiggle 600ms ease;
+}
+
+.js-motion .hero::before {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background: inherit;
+  content: "";
+  transform-origin: 70% 50%;
+  animation: hero-drift 24s ease-in-out infinite alternate;
+}
+
+.js-motion .hero__content,
+.js-motion .hero__copy {
+  pointer-events: none;
+}
+
+.js-motion .hero__copy > * {
+  pointer-events: auto;
+}
+
+.js-motion .hero__content h1 {
+  animation: rise-in 800ms var(--ease-out) 150ms backwards;
+}
+
+.js-motion .hero__content h1 span {
+  display: inline-block;
+  animation: pop-in 800ms var(--ease-bounce) 450ms backwards;
+}
+
+.js-motion .hero__content > .hero__copy > p:not(.hero__motto) {
+  animation: rise-in 700ms var(--ease-out) 550ms backwards;
+}
+
+.js-motion .hero__actions > * {
+  animation: pop-in 650ms var(--ease-bounce) 700ms backwards;
+}
+
+.js-motion .hero__actions > *:nth-child(2) {
+  animation-delay: 820ms;
+}
+
+.js-motion .hero__motto {
+  animation: rise-in 600ms var(--ease-out) 1000ms backwards;
+}
+
+.js-motion .hero__motto span {
+  display: inline-block;
+  animation: motto-pulse 2.4s ease-in-out 1.6s infinite;
+}
+
+.js-motion .hero__motto span:nth-of-type(2) {
+  animation-delay: 2s;
+}
+
+.js-motion .button span[aria-hidden="true"],
+.js-motion .game-card__button span[aria-hidden="true"] {
+  display: inline-block;
+  transition: transform 200ms var(--ease-bounce);
+}
+
+.js-motion .button:hover span[aria-hidden="true"],
+.js-motion .game-card__button:hover span[aria-hidden="true"] {
+  transform: translateX(4px);
+}
+
+.js-motion .hero .button--primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.js-motion .hero .button--primary::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 55%) 50%, transparent 70%);
+  content: "";
+  pointer-events: none;
+  transform: translateX(-130%);
+  animation: shine 5s ease-in-out 2.2s infinite;
+}
+
+/* Floating bubbles (created by home-animations.js) */
+
+.hero-bubbles {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-bubble {
+  position: absolute;
+  bottom: calc(var(--size) * -1);
+  left: var(--x);
+  width: var(--size);
+  height: var(--size);
+  animation: bubble-rise var(--dur) linear var(--delay) infinite;
+}
+
+.hero-bubble > span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 32% 28%,
+    rgb(255 255 255 / 92%) 0 9%,
+    rgb(255 255 255 / 28%) 10% 32%,
+    rgb(var(--tint) / 22%) 62%,
+    rgb(var(--tint) / 48%) 100%
+  );
+  box-shadow: inset 0 -4px 10px rgb(var(--tint) / 35%), 0 6px 14px rgb(var(--tint) / 18%);
+  cursor: pointer;
+  pointer-events: auto;
+  animation: bubble-sway calc(var(--dur) / 3) ease-in-out infinite alternate;
+}
+
+.hero-bubble > span::after {
+  position: absolute;
+  inset: -2px;
+  border: 2px solid rgb(var(--tint) / 70%);
+  border-radius: 50%;
+  content: "";
+  opacity: 0;
+}
+
+.hero-bubble.is-popping > span {
+  pointer-events: none;
+  animation: bubble-pop 320ms ease-out forwards;
+}
+
+.hero-bubble.is-popping > span::after {
+  animation: bubble-ring 320ms ease-out forwards;
+}
+
+/* Scroll reveals */
+
+.js-motion [data-reveal]:not(.is-visible) {
+  opacity: 0;
+}
+
+.js-motion [data-reveal].is-visible {
+  animation: rise-in 700ms var(--ease-out) var(--d, 0ms) backwards;
+}
+
+.js-motion [data-reveal="pop"].is-visible {
+  animation-name: pop-in;
+  animation-timing-function: var(--ease-bounce);
+}
+
+.js-motion [data-reveal="spin"].is-visible {
+  animation: spin-in 900ms var(--ease-bounce) var(--d, 0ms) backwards;
+}
+
+/* Game cards: pop in, idle bob, pointer tilt with glare */
+
+.js-motion .game-card {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px));
+  transition: transform 220ms ease, box-shadow 180ms ease;
+}
+
+.js-motion .game-card.is-tilting {
+  transition: transform 80ms linear, box-shadow 180ms ease;
+}
+
+.js-motion .game-card:hover {
+  --lift: -6px;
+}
+
+.js-motion .game-card.is-visible {
+  animation:
+    pop-in 750ms var(--ease-bounce) var(--d, 0ms) backwards,
+    card-bob 6s ease-in-out calc(var(--d, 0ms) + 750ms) infinite;
+}
+
+.js-motion .game-card:nth-child(2).is-visible {
+  animation-duration: 750ms, 6.8s;
+}
+
+.js-motion .game-card:hover.is-visible {
+  animation-play-state: running, paused;
+}
+
+.game-card__glare {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / 30%), transparent 48%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.game-card:hover .game-card__glare {
+  opacity: 1;
+}
+
+/* Features and stats */
+
+.js-motion .feature.is-visible .feature__icon svg {
+  animation: pop-in 650ms var(--ease-bounce) calc(var(--d, 0ms) + 150ms) backwards;
+}
+
+.js-motion .feature:hover .feature__icon {
+  animation: jelly 600ms ease;
+}
+
+.js-motion .feature:last-child.is-visible .feature__icon svg {
+  animation:
+    pop-in 650ms var(--ease-bounce) calc(var(--d, 0ms) + 150ms) backwards,
+    heartbeat 2.6s ease-in-out 1.5s infinite;
+}
+
+.js-motion .stats.is-visible .stat__icon {
+  animation: pop-in 700ms var(--ease-bounce) 200ms backwards;
+}
+
+.js-motion .stats.is-visible .stat:nth-child(2) .stat__icon {
+  animation-delay: 320ms;
+}
+
+.js-motion .stats.is-visible .stat:nth-child(3) .stat__icon {
+  animation-delay: 440ms;
+}
+
+.js-motion .stat:hover .stat__icon svg {
+  animation: wiggle 600ms ease;
+}
+
+.stat strong {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Footer */
+
+.js-motion .contact-card__arrow {
+  animation: ping 2.4s ease-out 1s infinite;
+}

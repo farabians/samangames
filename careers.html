@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="src/S-logo.png" />
+    <link rel="icon" type="image/png" href="assets/images/brand/s-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Explore opportunities to join Saman Games and help shape playful mobile games." />
     <meta name="theme-color" content="#fff8ec" />
@@ -13,13 +13,13 @@
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
   </head>
   <body class="page-standalone">
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Saman Games home">
-        <img src="src/samangames_logo.png" alt="Saman Games" />
+        <img src="assets/images/brand/samangames-logo.png" alt="Saman Games" />
       </a>
 
       <button
@@ -174,7 +174,7 @@
 
     <footer class="site-footer" id="contact">
       <div class="contact-section__inner page-shell">
-        <img class="contact-section__logo" src="src/S-logo.png" alt="Saman Games" />
+        <img class="contact-section__logo" src="assets/images/brand/s-logo.png" alt="Saman Games" />
         <div class="contact-card">
           <div class="contact-copy">
             <h2 id="contact-title">Let’s Play Together!</h2>
@@ -216,31 +216,6 @@
       </div>
     </footer>
 
-    <script>
-      const menuToggle = document.querySelector('.menu-toggle');
-      const siteHeader = document.querySelector('.site-header');
-      const navigationLinks = document.querySelectorAll('.main-nav a, .header-actions a, .social-links a');
-
-      const closeMenu = () => {
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Open navigation menu');
-        siteHeader.classList.remove('is-menu-open');
-      };
-
-      menuToggle.addEventListener('click', () => {
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', String(!isExpanded));
-        menuToggle.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
-        siteHeader.classList.toggle('is-menu-open', !isExpanded);
-      });
-
-      navigationLinks.forEach((link) => {
-        link.addEventListener('click', closeMenu);
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeMenu();
-      });
-    </script>
+    <script src="assets/js/menu.js"></script>
   </body>
 </html>

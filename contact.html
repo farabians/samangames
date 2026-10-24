@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="src/S-logo.png" />
+    <link rel="icon" type="image/png" href="assets/images/brand/s-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Contact Saman Games for partnerships, support, and game-related questions." />
     <meta name="theme-color" content="#fff8ec" />
@@ -13,13 +13,13 @@
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
   </head>
   <body class="page-standalone">
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Saman Games home">
-        <img src="src/samangames_logo.png" alt="Saman Games" />
+        <img src="assets/images/brand/samangames-logo.png" alt="Saman Games" />
       </a>
 
       <button
@@ -126,7 +126,16 @@
             <div class="page-panel contact-form">
               <span class="page-kicker">Send a message</span>
               <h2>Quick hello.</h2>
-              <form class="contact-form__form">
+              <form
+                class="contact-form__form"
+                action="https://formsubmit.co/samangamesofficial@gmail.com"
+                method="POST"
+              >
+                <input type="hidden" name="_subject" value="Saman Games contact form" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://samangames.com/contact.html" />
+                <input class="contact-form__honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
                 <label>
                   Name
                   <input type="text" name="name" placeholder="Your name" required />
@@ -140,6 +149,7 @@
                   <textarea name="message" placeholder="Tell us about your idea" required></textarea>
                 </label>
                 <button class="button button--primary" type="submit">Send message</button>
+                <p class="contact-form__status" role="status" aria-live="polite" hidden></p>
               </form>
             </div>
           </div>
@@ -149,7 +159,7 @@
 
     <footer class="site-footer" id="contact">
       <div class="contact-section__inner page-shell">
-        <img class="contact-section__logo" src="src/S-logo.png" alt="Saman Games" />
+        <img class="contact-section__logo" src="assets/images/brand/s-logo.png" alt="Saman Games" />
         <div class="contact-card">
           <div class="contact-copy">
             <h2 id="contact-title">Let’s Play Together!</h2>
@@ -191,45 +201,7 @@
       </div>
     </footer>
 
-    <script>
-      const menuToggle = document.querySelector('.menu-toggle');
-      const siteHeader = document.querySelector('.site-header');
-      const navigationLinks = document.querySelectorAll('.main-nav a, .header-actions a, .social-links a');
-
-      const closeMenu = () => {
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Open navigation menu');
-        siteHeader.classList.remove('is-menu-open');
-      };
-
-      menuToggle.addEventListener('click', () => {
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', String(!isExpanded));
-        menuToggle.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
-        siteHeader.classList.toggle('is-menu-open', !isExpanded);
-      });
-
-      navigationLinks.forEach((link) => {
-        link.addEventListener('click', closeMenu);
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeMenu();
-      });
-
-      const contactForm = document.querySelector('.contact-form__form');
-      contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        const formData = new FormData(contactForm);
-        const name = formData.get('name').trim();
-        const email = formData.get('email').trim();
-        const message = formData.get('message').trim();
-        const subject = `Saman Games contact: ${name}`;
-        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-
-        window.location.href = `mailto:samangamesofficial@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      });
-    </script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/contact.js"></script>
   </body>
 </html>

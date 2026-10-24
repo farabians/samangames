@@ -25,7 +25,7 @@ body {
   min-height: clamp(420px, 50vw, 690px);
   overflow: hidden;
   aspect-ratio: auto;
-  background: url("src/hero-img.png") center center / cover no-repeat;
+  background: url("../images/backgrounds/hero.png") center center / cover no-repeat;
 }
 
 .hero::after {
