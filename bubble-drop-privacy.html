@@ -50,7 +50,7 @@
       <article class="privacy-document">
         <div class="privacy-document__updated">
           <span class="privacy-document__status" aria-hidden="true"></span>
-          Last updated: October 24, 2026
+          Last updated: October 29, 2026
         </div>
 
         <p>
@@ -89,6 +89,24 @@
             <li>Technical records needed to run the service: request timestamps, one-time request codes and rate-limit counters used to prevent cheating and abuse</li>
           </ul>
           <p><strong>Purpose:</strong> app functionality (saving and restoring your game), account management, and fraud prevention and security.</p>
+
+          <h3>2.1a Gameplay statistics (collected by us)</h3>
+          <p>
+            When you finish or leave a level, the App sends a short report linked to your random user ID: the level
+            number, whether it was won, lost or left, how many shots and seconds it took, stars earned, which attempt
+            at that level it was, whether tools or continues were used, the game version, and how many days ago you
+            started playing. These reports contain no name, email or device identifier.
+          </p>
+          <p><strong>Purpose:</strong> analytics — finding levels that are too hard or too easy and improving the game's balance.</p>
+
+          <h3>2.1b Purchases</h3>
+          <p>
+            Coin packs and the Miner's Pass subscription are sold through <strong>Google Play Billing</strong>.
+            Payment is handled entirely by Google; we never receive your card or payment details. To deliver what
+            you bought, our server receives from Google the purchase token, order ID, product, purchase and expiry
+            times and refund status, and stores them with your user ID.
+          </p>
+          <p><strong>Purpose:</strong> app functionality (delivering purchases and subscriptions), and fraud prevention.</p>
 
           <h3>2.2 Google Play Games Services (optional)</h3>
           <p>
@@ -146,8 +164,8 @@
           <h3>2.6 What we do not collect</h3>
           <p>
             We do not collect your name, email address, phone number, postal address, precise (GPS) location, contacts,
-            photos, videos, audio recordings, files, messages, calendar, health or financial information. The App does
-            not offer real-money purchases.
+            photos, videos, audio recordings, files, messages, calendar or health information, and we never see your
+            payment card details.
           </p>
         </section>
 
@@ -157,6 +175,8 @@
             <li>To provide the game: save and sync your progress, coins, items and daily rewards</li>
             <li>To show leaderboards</li>
             <li>To show ads and grant rewards for rewarded ads</li>
+            <li>To deliver coin packs and the Miner's Pass subscription</li>
+            <li>To understand which levels are too hard or too easy, and improve the game's balance</li>
             <li>To prevent cheating, fraud and abuse, and keep the service secure</li>
             <li>To fix problems and maintain the service</li>
           </ul>
@@ -177,8 +197,13 @@
               <tbody>
                 <tr>
                   <td>Google Firebase (Authentication, Cloud Firestore, Cloud Functions)</td>
-                  <td>Account, cloud save, game economy</td>
-                  <td>User ID, game progress and economy data, IP address, app/device identifiers</td>
+                  <td>Account, cloud save, game economy, gameplay statistics</td>
+                  <td>User ID, game progress and economy data, gameplay statistics, purchase records, IP address, app/device identifiers</td>
+                </tr>
+                <tr>
+                  <td>Google Play Billing</td>
+                  <td>Payments for coin packs and subscriptions</td>
+                  <td>Purchase token, order ID, product, purchase and refund status (payment details stay with Google)</td>
                 </tr>
                 <tr>
                   <td>Google Play Games Services</td>
@@ -200,9 +225,11 @@
           <h2>5. Data retention and deletion</h2>
           <ul>
             <li>Game account data is kept while your account is in use. Technical records used to prevent duplicate rewards are kept only as long as needed for that purpose.</li>
+            <li>Gameplay statistics are deleted automatically 90 days after they are sent.</li>
+            <li>Purchase records are kept as long as needed to deliver purchases and handle refunds, and as required by law.</li>
             <li>
               You can ask us to <strong>delete your game account and all data stored on our servers</strong> at any time
-              through our <a href="https://samangames.com/contact">contact page</a>. Please include your Play
+              through our <a href="https://samangames.com/contact.html">contact page</a>. Please include your Play
               Games display name if you are signed in. We delete the data within 30 days of verifying the request.
             </li>
             <li>Data held by Google for Play Games and AdMob is managed under Google's own policies and settings.</li>
@@ -262,7 +289,7 @@
           <h2>11. Contact</h2>
           <div class="privacy-contact">
             <strong>Saman Games</strong>
-            <span>Contact page: <a href="https://samangames.com/contact">https://samangames.com/contact</a></span>
+            <span>Contact page: <a href="https://samangames.com/contact.html">https://samangames.com/contact.html</a></span>
           </div>
         </section>
       </article>
